@@ -1,0 +1,8 @@
+env/
+static/
+!static/.placeholder
+media/
+!media/.placeholder
+test.db
+*.pyc
+*.swp
