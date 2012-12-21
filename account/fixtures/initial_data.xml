@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<django-objects version="1.0">
+  <object pk="2" model="auth.user">
+    <field type="CharField" name="username">user</field>
+    <field type="CharField" name="first_name">Юзер</field>
+    <field type="CharField" name="last_name">Юзеров</field>
+    <field type="CharField" name="email">user@example.com</field>
+    <field type="CharField" name="password">pbkdf2_sha256$10000$5ABQEkF8KzLy$YwtE/d6r4QeOCV0+2NB7ddhPrmrmbphtO+mWA3gm9xA=</field>
+    <field type="BooleanField" name="is_staff">False</field>
+    <field type="BooleanField" name="is_active">True</field>
+    <field type="BooleanField" name="is_superuser">False</field>
+    <field type="DateTimeField" name="last_login">2012-12-21T07:50:48+00:00</field>
+    <field type="DateTimeField" name="date_joined">2012-12-21T07:50:48+00:00</field>
+    <field to="auth.group" name="groups" rel="ManyToManyRel"></field>
+    <field to="auth.permission" name="user_permissions" rel="ManyToManyRel"></field>
+  </object>
+  <object pk="1" model="account.account">
+    <field to="auth.user" name="user" rel="ManyToOneRel"><natural>user</natural></field>
+    <field type="CharField" name="first_name">Юзер</field>
+    <field type="CharField" name="last_name">Юзеров</field>
+    <field type="CharField" name="email">user@example.com</field>
+    <field type="CharField" name="jabber">user@example.com</field>
+    <field type="DateField" name="dob">2012-12-21</field>
+    <field type="CharField" name="bio">Клёвый юзер</field>
+  </object>
+</django-objects>
