@@ -58,6 +58,7 @@ FILEBROWSER_DIRECTORY = "upload/"
 ADMIN_MEDIA_PREFIX = STATIC_URL + "admin/"
 STATICFILES_DIRS = (
     os.path.join(PROJECT_ROOT, "static_files"),
+    os.path.join(PROJECT_ROOT, "bootstrap_assets"),
 )
 AUTH_PROFILE_MODULE = 'account.Account'
 # List of finder classes that know how to find static files in
@@ -76,6 +77,15 @@ TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
 #     'django.template.loaders.eggs.Loader',
+)
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'django.contrib.auth.context_processors.auth',
+    'django.core.context_processors.i18n',
+    'django.core.context_processors.debug',
+    'django.core.context_processors.static',
+    'django.core.context_processors.media',
+    'django.core.context_processors.request',
 )
 
 MIDDLEWARE_CLASSES = (
