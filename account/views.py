@@ -4,9 +4,10 @@ from django.template import RequestContext
 from django.shortcuts import render_to_response
 from django.core.exceptions import ObjectDoesNotExist
 from django.utils.translation import ugettext as _
+from django.contrib.auth.decorators import login_required
 
 
-
+@login_required(login_url='/login/')
 def view_profile(request):
     if request.user:
         try:

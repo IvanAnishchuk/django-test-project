@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block content %}
+
+<div class="help-block">{% trans "Enter your login and password to continue." %}</div>
+
+{% if form.non_field_errors %}
+  <div class="alert alert-error">
+    <h2>{% trans "Please correct the following error:" %}</h2>
+  </div>
+  {{ form.non_field_errors }}
+{% endif %}
+
+<form class="form-horizontal" method="post">
+  {% csrf_token %}
+  <fieldset>
+    <div class="control-group">
+        <label class="control-label" for="id_username">
+            {% trans "Username" %}:
+        </label>
+        <div class="controls">
+            {{ form.username }}
+            {% if form.username.errors %}
+              <div class="help-inline">
+                {{ form.username.errors|join:", " }}
+              </div>
+            {% endif %}
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label" for="id_password">
+            {% trans "Password" %}:
+        </label>
+        <div class="controls">
+            {{ form.password }}
+            {% if form.password.errors %}
+              <div class="help-inline">
+                {{ form.password.errors|join:", " }}
+              </div>
+            {% endif %}
+        </div>
+    </div>
+  </fieldset>
+  <div class="form-actions">
+    <button type="submit" class="btn btn-primary">{% trans "Submit" %}</button>
+  </div>
+</form>
+
+{% endblock %}
+

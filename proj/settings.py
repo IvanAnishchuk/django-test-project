@@ -61,6 +61,8 @@ STATICFILES_DIRS = (
     os.path.join(PROJECT_ROOT, "bootstrap_assets"),
 )
 AUTH_PROFILE_MODULE = 'account.Account'
+LOGIN_REDIRECT_URL = '/'
+
 # List of finder classes that know how to find static files in
 # various locations.
 STATICFILES_FINDERS = (
