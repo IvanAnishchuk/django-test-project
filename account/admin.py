@@ -1,4 +1,5 @@
 # coding: utf-8
+""" Account admin """
 from django.conf import settings
 from django.contrib import admin
 from django import forms
@@ -6,6 +7,7 @@ from account.models import Account
 
 
 class AccountAdmin(admin.ModelAdmin):
+    """ Admin class for Account model """
     list_display = ('user', 'email', 'first_name', 'last_name')
     search_fields = ('user', 'email', 'first_name', 'last_name')
 
