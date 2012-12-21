@@ -59,7 +59,7 @@ ADMIN_MEDIA_PREFIX = STATIC_URL + "admin/"
 STATICFILES_DIRS = (
     os.path.join(PROJECT_ROOT, "static_files"),
 )
-
+AUTH_PROFILE_MODULE = 'account.Account'
 # List of finder classes that know how to find static files in
 # various locations.
 STATICFILES_FINDERS = (
@@ -97,6 +97,10 @@ TEMPLATE_DIRS = (
     os.path.join(PROJECT_ROOT, 'templates')
 )
 
+PROJECT_APPS = (
+    'account',
+)
+
 INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -108,7 +112,8 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
-)
+    'south',
+) + PROJECT_APPS
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
