@@ -81,6 +81,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.static',
     'django.core.context_processors.media',
     'django.core.context_processors.request',
+    'settings_context_processor.context_processors.exposed_settings',
 )
 
 MIDDLEWARE_CLASSES = (
