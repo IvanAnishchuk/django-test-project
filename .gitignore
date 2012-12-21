@@ -3,6 +3,8 @@ static/
 !static/.placeholder
 media/
 !media/.placeholder
+logs/
+!logs/.placeholder
 test.db
 *.pyc
 *.swp
