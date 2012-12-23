@@ -100,6 +100,7 @@ PROJECT_APPS = (
     'settings_context_processor',
     'change_any_object',
     'models_stat',
+    'model_action_logger',
 )
 
 INSTALLED_APPS = (
