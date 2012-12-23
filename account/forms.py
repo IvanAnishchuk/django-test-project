@@ -2,6 +2,7 @@
 from django.forms import ModelForm
 from django.forms import Textarea
 from account.models import Account
+from django.contrib.admin.widgets import AdminDateWidget
 
 
 class AccountEditForm(ModelForm):
@@ -15,4 +16,5 @@ class AccountEditForm(ModelForm):
         )
         widgets = {
             'bio': Textarea(attrs={'cols': 24, 'rows': 6}),
+            'dob': AdminDateWidget()
         }
