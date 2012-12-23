@@ -43,7 +43,7 @@
           <div class="nav-collapse collapse">
             <ul class="nav">
               <li class="active"><a href="{% url account_view_profile %}">{% trans "View profile" %}</a></li>
-              <li><a href="#{#% url account_edit_profile %#}">{% trans "Edit profile" %}</a></li>
+              <li><a href="{% url account_edit_profile %}">{% trans "Edit profile" %}</a></li>
             {% if user.is_authenticated %}
               <li><a href="{% url logout %}">{% trans "Log out" %}</a></li>
             {% else %}
