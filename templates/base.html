@@ -1,4 +1,4 @@
-{% load i18n %}<!DOCTYPE html>
+{% load i18n %}{% load change_any_object %}<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -46,8 +46,25 @@
           <a class="brand" href="/">Test django project</a>
           <div class="nav-collapse collapse">
             <ul class="nav">
-              <li class="active"><a href="{% url account_view_profile %}">{% trans "View profile" %}</a></li>
-              <li><a href="{% url account_edit_profile %}">{% trans "Edit profile" %}</a></li>
+            {% if user.is_authenticated %}
+              <li class="active">
+                <a href="{% url account_view_profile %}">
+                  {% trans "View profile" %}
+                </a>
+              </li>
+              <li>
+                <a href="{% url account_edit_profile %}">
+                  {% trans "Edit profile" %}
+                </a>
+              </li>
+            {% endif %}
+            {% if user.is_staff %}
+              <li>
+                <a href="{% show_change_url user.get_profile %}">
+                  {% trans "Edit profile (admin)" %}
+                </a>
+              </li>
+            {% endif %}
             {% if user.is_authenticated %}
               <li><a href="{% url logout %}">{% trans "Log out" %}</a></li>
             {% else %}

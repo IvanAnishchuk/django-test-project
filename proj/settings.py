@@ -98,6 +98,7 @@ MIDDLEWARE_CLASSES = (
 PROJECT_APPS = (
     'account',
     'settings_context_processor',
+    'change_any_object',
 )
 
 INSTALLED_APPS = (
