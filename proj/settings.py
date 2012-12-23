@@ -99,6 +99,7 @@ PROJECT_APPS = (
     'account',
     'settings_context_processor',
     'change_any_object',
+    'models_stat',
 )
 
 INSTALLED_APPS = (
