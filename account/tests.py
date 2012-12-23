@@ -47,3 +47,12 @@ class AccountWebTest(WebTest):
         self.assertNotIn('error', page)
         acc = Account.objects.get(id=acc.id)
         self.assertEqual(acc.jabber, 'user@test.com')
+
+    def test_edit_calendar(self):
+        acc = self._create_account()
+        self._login(acc.user.username, 'qwerty')
+        page = self.app.get(reverse('account_edit_profile'))
+        self.assertIn('calendar.js', page)
+        self.assertIn('DateTimeShortcuts.js', page)
+        self.assertIn('vDateField', page)
+        self.assertIn('admindatewidget', page)
