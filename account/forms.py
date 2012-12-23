@@ -9,10 +9,10 @@ class AccountEditForm(ModelForm):
     class Meta:
         model = Account
         fields = (
-            "first_name", "last_name",
-            "email", "jabber",
-            "dob",
             "bio",
+            "dob",
+            "email", "jabber",
+            "last_name", "first_name",
         )
         widgets = {
             'bio': Textarea(attrs={'cols': 24, 'rows': 6}),
